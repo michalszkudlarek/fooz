@@ -1,0 +1,46 @@
+.wp-block-recruitment-task-faq {
+	&-accordion {
+		border: 1px dashed #ccc;
+
+		&.is-selected {
+			border-color: #eee;
+		}
+
+		.faq-accordion-title {
+			text-align: center;
+			margin: 10px 0;
+		}
+	}
+
+	&-item {
+		border-bottom: 1px solid #eee;
+		padding: 10px;
+
+		.faq {
+			&-question-text,
+			&-answer {
+				padding: 8px;
+				margin: 0;
+			}
+
+			&-question {
+				cursor: pointer;
+				font-size: 1.1em;
+				font-weight: 500;
+				margin: 0;
+			}
+
+			&-answer {
+				display: block;
+				opacity: 1;
+				max-height: none;
+				color: #555;
+
+				.rich-text {
+					margin: 10px 0 0;
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,4 @@
+# Ignore the same things as git, plus package lock files
+/node_modules
+package-lock.json
+/assets/styles/main.css

@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "recruitment-task/faq-accordion",
+	"version": "0.1.0",
+	"title": "Faq Accordion",
+	"category": "widgets",
+	"icon": "editor-help",
+	"description": "A custom block to display a FAQ accordion.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "faq-accordion",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2"
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Frequently Asked Questions"
+		},
+		"innerBlocks": [
+			{
+				"name": "recruitment-task/faq-item",
+				"attributes": {
+					"question": "What is the return policy?"
+				},
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "You can return any item within 30 days of purchase, provided it is in its original condition."
+						}
+					}
+				]
+			},
+			{
+				"name": "recruitment-task/faq-item",
+				"attributes": {
+					"question": "How long does shipping take?"
+				},
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "Standard shipping typically takes 5-7 business days. Expedited options are available at checkout."
+						}
+					}
+				]
+			}
+		]
+	}
+}

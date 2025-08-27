@@ -1,0 +1,6 @@
+@use '../abstracts/colors';
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: colors.$background-primary;
+}

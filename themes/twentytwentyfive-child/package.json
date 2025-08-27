@@ -1,0 +1,28 @@
+{
+    "name": "twentytwentyfive-child",
+    "version": "1.0.0",
+    "description": "Custom child theme for Twenty Twenty-Five with a modern asset pipeline.",
+    "author": "Michał Szkudlarek",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "compile:sass": "sass assets/styles/main.scss assets/styles/main.css --style=compressed",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint:css": "stylelint \"**/*.scss\"",
+        "lint:css:fix": "stylelint \"**/*.scss\" --fix",
+        "watch:sass": "sass --watch assets/styles/main.scss:assets/styles/main.css",
+        "watch:format": "onchange \"**/*.{php,js,scss,json}\" -- prettier --write {{changed}}",
+        "watch:lint": "onchange \"**/*.scss\" -- npm run lint:css",
+        "dev": "npm-run-all --parallel watch:*"
+    },
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.24.0",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "prettier": "3.6.2",
+        "sass": "^1.90.0",
+        "stylelint": "^16.23.1",
+        "stylelint-config-standard-scss": "^15.0.1"
+    }
+}

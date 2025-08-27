@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "recruitment-task/faq-item",
+	"title": "FAQ Item",
+	"category": "text",
+	"parent": ["recruitment-task/faq-accordion"],
+	"description": "A single question and answer item for the FAQ Accordion.",
+	"editorStyle": "file:../../index.css",
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"inserter": false
+	},
+	"attributes": {
+		"question": {
+			"type": "string",
+			"source": "html",
+			"selector": ".faq-question-text"
+		}
+	}
+}

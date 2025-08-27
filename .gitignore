@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+
+/languages
+# Ignore the contents of the plugins and themes directories by default
+/plugins/*
+/themes/*
+/upgrade
+/upgrade-temp-backup
+/uploads
+index.php
+
+# --- Whitelist specific plugin and theme ---
+!/plugins/faq-accordion/
+!/themes/twentytwentyfive-child/
+
+# --- Ignore build artifacts and dependency lock files ---
+# Ignore the build folder specifically inside the faq-accordion plugin
+/plugins/faq-accordion/build/
+
+# Ignore node_modules, log files, and build artifacts everywhere
+**/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore package-lock.json files everywhere
+**/package-lock.json
+
+# Don't ignore the .gitignore file itself
+!.gitignore
+
+# IDE / OS files
+.DS_Store
+.vscode/
+Thumbs.db
+npm-debug.log*
