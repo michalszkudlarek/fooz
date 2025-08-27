@@ -34,18 +34,21 @@ function fooz_load_related_books() {
 
             $book_id = get_the_ID();
             $genres = get_the_terms($book_id, 'genre');
-            $genre_names = array();
+            $genre_data = array();
 
             if ( !empty($genres) && !is_wp_error($genres) ) {
                 foreach ( $genres as $genre ) {
-                    $genre_names[] = $genre->name;
+                    $genre_data[] = array(
+                        'name' => esc_html( $genre->name ),
+                        'link' => esc_url( get_term_link( $genre ) ),
+                    );
                 }
             }
 
             $books_data[] = array(
                 'title' => get_the_title(),
                 'date' => get_the_date(),
-                'genres' => implode(', ', $genre_names),
+                'genres' => $genre_data,
                 'excerpt' => get_the_excerpt(),
                 'permalink' => get_the_permalink(),
             );

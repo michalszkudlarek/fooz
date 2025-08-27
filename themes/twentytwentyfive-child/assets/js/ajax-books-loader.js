@@ -38,10 +38,16 @@ export function initBookLoader(ajaxData) {
 
                 result.data.forEach((book) => {
                     const li = document.createElement('li');
+                    // 1. Check if the genres array exists and has items.
+                    const hasGenres = book.genres && book.genres.length > 0;
+                    // 2. Map the array of genre objects to an array of HTML anchor tags.
+                    const genreLinks = hasGenres
+                        ? book.genres.map(genre => `<a href="${genre.link}">${genre.name}</a>`).join(', ')
+                        : 'N/A'; // Fallback text if there are no genres
                     li.innerHTML = `
                         <h3 class="book-title"><a href="${book.permalink}">${book.title}</a></h3>
                         <p class="book-meta"><strong>Date:</strong> ${book.date}</p>
-                        <p class="book-meta"><strong>Genre:</strong> ${book.genres}</p>
+                        <p class="book-meta"><strong>Genre:</strong> ${genreLinks}</p>
                         <div class="book-excerpt">${book.excerpt}</div>
                     `;
                     ul.appendChild(li);
