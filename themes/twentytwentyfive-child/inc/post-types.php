@@ -11,10 +11,6 @@ add_action('init', 'fooz_register_custom_post_types');
  * Register Custom Post Type: Book
  * Register Custom Taxonomy: Genre
  */
-/**
- * Register Custom Post Type: Book
- * Register Custom Taxonomy: Genre
- */
 function fooz_register_custom_post_types() {
     // REGISTER CUSTOM POST TYPE: BOOK
     $book_labels = array(
